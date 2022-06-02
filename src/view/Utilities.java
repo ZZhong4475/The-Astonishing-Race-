@@ -1,7 +1,16 @@
 
 package view;
 
+
+
+import java.awt.BorderLayout;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.text.DecimalFormat;
+
+import javax.swing.BorderFactory;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  * Utility methods for this project.
@@ -9,7 +18,7 @@ import java.text.DecimalFormat;
  * @author Charles Bryan
  * @version Autumn 2019
  */
-public final class Utilities {
+public final class Utilities extends JPanel {
 
     /** The number of milliseconds in a second. */
     public static final int MILLIS_PER_SEC = 1000;
@@ -22,6 +31,8 @@ public final class Utilities {
     
     /** The delimiter for messages. */
     public static final String DELIMITER = ":";
+    
+    private static final int PADDING = 10;
 
     /** A formatter to require at least 1 digit, leading 0. */
     public static final DecimalFormat ONE_DIGIT_FORMAT = new DecimalFormat("0");
@@ -31,12 +42,18 @@ public final class Utilities {
 
     /** A formatter to require at least 3 digits, leading 0s. */
     public static final DecimalFormat THREE_DIGIT_FORMAT = new DecimalFormat("000");
+    
 
+
+    
     /**
      * Does not allow public construction.
      */
     private Utilities() {
+       
+    
     }
+    
 
     /**
      * This formats a positive integer into minutes, seconds, and millisecons. 00:00:000
@@ -56,4 +73,10 @@ public final class Utilities {
                + TWO_DIGIT_FORMAT.format(seconds) + DELIMITER
                + THREE_DIGIT_FORMAT.format(milliseconds);
     }
+
+
+    
+
 }
+
+
